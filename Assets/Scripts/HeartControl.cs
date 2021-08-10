@@ -5,7 +5,7 @@ using UnityEngine;
 public class HeartControl : MonoBehaviour
 {
     public GameObject [] heart;
-    public int hp, maxhp;
+    public int hp, maxhp, x=1;
     public GameObject gameOver, gameWin;
 
 
@@ -28,12 +28,17 @@ public class HeartControl : MonoBehaviour
     {
         if (hp > maxhp)
         {
-            hp = 3;
+            hp = maxhp;
         }
         else if (hp <= 0)
         {
             gameOver.gameObject.SetActive(true);
             Time.timeScale = 0;
+            if (x==1)
+            {
+                SoundControl.PlaySound("death");
+                x++;
+            }
         }        
     }
 

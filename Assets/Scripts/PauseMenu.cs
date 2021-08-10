@@ -46,4 +46,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         GameIsPaused = false;
     }
+    public void sahnedegis()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

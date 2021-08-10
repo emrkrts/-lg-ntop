@@ -21,6 +21,7 @@ public class CharacterControl : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && Mathf.Approximately(rgb.velocity.y, 0))
         {
+            SoundControl.PlaySound("jump");
             rgb.AddForce(Vector3.up * jump, ForceMode2D.Impulse);
         }
     }
@@ -34,6 +35,7 @@ public class CharacterControl : MonoBehaviour
 
         if (other.gameObject.CompareTag("End"))
         {
+            SoundControl.PlaySound("win");
             HeartControl.instance.gameWin.SetActive(true);
             Time.timeScale = 0;
         }
